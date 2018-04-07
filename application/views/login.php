@@ -1,5 +1,5 @@
 <div class="container" id="login-form" ng-controller="loginController">
-    <a href="" class="login-logo"><img style="max-width: 365px; width: 100%;" class="img-responsive center-block" masked-image ng-src="{{ dirImages + 'dinamic/empresa/' + $parent.fEmpresa.nombre_logo }} "></a>
+    <a href="" class="login-logo"><img style="max-width: 205px; width: 100%;" class="img-responsive center-block" masked-image ng-src="{{ dirImages + 'dinamic/empresa/' + $parent.fEmpresa.nombre_logo }} "></a>
         <div class="row">
             <div class="col-md-4 col-md-offset-4"> 
                 <div class="panel panel-default">

@@ -46,6 +46,7 @@ class Model_rol extends CI_Model {
 		$this->db->where('r.estado_rol', 1);
 		$this->db->where('r.pos_fuera_modulo', 0);
 		$this->db->where('gr.estado_gr', 1);
+		$this->db->where('m.estado_mod', 1);
 		// $this->db->where('m.es_unidad_negocio', 1);
 		$this->db->where('r.idparent IS NULL');
 		$this->db->where('gr.idgroup', $this->sessionHospital['idgroup']);
