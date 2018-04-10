@@ -46,7 +46,7 @@ angular.module('theme.medicamentosPorVencer', ['theme.core.services'])
 	  columnDefs: [
 	    { field: 'idmovimiento', name: 'idmovimiento', displayName: 'COD. MOV.', width: '8%', visible: false },
 	    { field: 'num_lote', name: 'num_lote', displayName: 'LOTE', maxWidth: 80 },
-	    { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO' },
+	    { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO' },
 	    { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', width: '15%' },
 	    { field: 'almacen', name: 'almacen', displayName: 'ALMACEN', width: '18%' },
 	    { field: 'medida', name: 'descripcion_pres', displayName: 'MEDIDA', width: '8%' },

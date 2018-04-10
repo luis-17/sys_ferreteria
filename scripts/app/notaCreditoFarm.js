@@ -202,7 +202,7 @@ angular.module('theme.notaCreditoFarm', ['theme.core.services'])
             columnDefs: [
               { field: 'cantidad_original', name: 'cantidad_original', displayName: 'Cant.Or.', minWidth: 60,visible:false },
               { field: 'cantidad', name: 'cantidad', displayName: 'Cant.', minWidth: 60, enableCellEdit: true, cellClass:'ui-editCell'  },
-              { field: 'medicamento', name: 'medicamento', displayName: 'Medicamento',minWidth: 280 },
+              { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO',minWidth: 280 },
               { field: 'precio', name: 'precio', displayName: 'Precio',minWidth: 100 },
               { field: 'monto_sf', name: 'monto', displayName: 'Monto',minWidth: 100 },
               { field: 'accion', displayName: 'Acción', maxWidth: 95, cellTemplate:'<button type="button" class="btn btn-sm btn-danger center-block" ng-click="grid.appScope.btnQuitarDeLaCesta(row)"> <i class="fa fa-trash"></i> </button>' }

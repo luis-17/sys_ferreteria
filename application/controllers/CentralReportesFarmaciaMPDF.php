@@ -202,7 +202,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         $this->pdf->SetFillColor(150, 190, 240);
         
         $this->pdf->Cell(10,8,utf8_decode('ITEM'),1,0,'L',TRUE);
-        $this->pdf->Cell(70,8,utf8_decode('MEDICAMENTO'),1,0,'L',TRUE);
+        $this->pdf->Cell(70,8,utf8_decode('PRODUCTO'),1,0,'L',TRUE);
         $this->pdf->Cell(30,8,utf8_decode('LABORATORIO'),1,0,'L',TRUE);
         $this->pdf->MultiCell(15,4,'STOCK MINIMO',1,'C',TRUE);
         $x=$this->pdf->GetX();
@@ -812,7 +812,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         $this->pdf->Cell(10,6,utf8_decode('ITEM'),1,0,'L',TRUE);
         $this->pdf->Cell(15,6,utf8_decode('COD.'),1,0,'L',TRUE);
         $this->pdf->Cell($columna_laboratorio,6,utf8_decode('LABORATORIO'),1,0,'L',TRUE);
-        $this->pdf->Cell($columna_medicamento,6,utf8_decode('MEDICAMENTO'),1,0,'L',TRUE);
+        $this->pdf->Cell($columna_medicamento,6,utf8_decode('PRODUCTO'),1,0,'L',TRUE);
         $this->pdf->Cell($columna_cantidad,6,$texto_cantidad,1,0,'C',TRUE);
         $this->pdf->Cell($columna_monto,6,$texto_monto,1,0,'R',TRUE);
         
@@ -979,7 +979,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         }
         $this->pdf->Cell(10,6,utf8_decode('ITEM'),1,0,'L',TRUE);
         $this->pdf->Cell(15,6,utf8_decode('COD.'),1,0,'L',TRUE);
-        $this->pdf->Cell($columna_medicamento,6,utf8_decode('MEDICAMENTO'),1,0,'L',TRUE);
+        $this->pdf->Cell($columna_medicamento,6,utf8_decode('PRODUCTO'),1,0,'L',TRUE);
         $this->pdf->Cell($columna_cantidad,6,$texto_cantidad,1,0,'C',TRUE);
         $this->pdf->Cell($columna_monto,6,$texto_monto,1,0,'R',TRUE);
         
@@ -1256,7 +1256,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
             $this->pdf->SetFillColor(150, 190, 240);
             
             $this->pdf->Cell(30,6,utf8_decode('COD.MED.'),1,0,'L',TRUE);
-            $this->pdf->Cell(100,6,utf8_decode('MEDICAMENTO'),1,0,'L',TRUE);
+            $this->pdf->Cell(100,6,utf8_decode('PRODUCTO'),1,0,'L',TRUE);
             $this->pdf->Cell(30,6,utf8_decode('CANTIDAD'),1,0,'C',TRUE);
             $this->pdf->Cell(30,6,utf8_decode('MONTO (S/.)'),1,0,'R',TRUE);
             $this->pdf->Ln(6);
@@ -1448,7 +1448,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         }
 
         /* CREACION DEL PDF */ 
-        $headerDetalle = array('IDVENTA', 'ITEM', 'FECHA MOVIMIENTO', 'MEDICAMENTO', 'CANT.', 'PRECIO UNIT.', 'TOTAL DETALLE','STOCK'); 
+        $headerDetalle = array('IDVENTA', 'ITEM', 'FECHA MOVIMIENTO', 'PRODUCTO', 'CANT.', 'PRECIO UNIT.', 'TOTAL DETALLE','STOCK'); 
         $this->pdf->Ln(1); 
         
         foreach ($arrMainArray as $keyPrin => $rowPrin) { 
@@ -1934,7 +1934,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
 
         $this->pdf->Cell(10,8,utf8_decode('ITEM'),1,0,'L',TRUE);
         $this->pdf->Cell(15,8,utf8_decode('LOTE'),1,0,'L',TRUE);
-        $this->pdf->Cell(75,8,utf8_decode('MEDICAMENTO'),1,0,'L',TRUE);
+        $this->pdf->Cell(75,8,utf8_decode('PRODUCTO'),1,0,'L',TRUE);
         $this->pdf->Cell(30,8,utf8_decode('LABORATORIO'),1,0,'L',TRUE);
         $this->pdf->Cell(25,8,utf8_decode('ALMACEN'),1,0,'L',TRUE);
 
@@ -2129,7 +2129,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         // APARTADO GRILLA
         //encabezado de la grilla
         $arrWidthCol = array(10,10,110,20,20,20);
-        $arrHeaderText = array('ITEM','COD. MED.', 'MEDICAMENTO', 'STOCK AL ' . $allInputs['hasta'], 'P.U. PONDERADO', 'VALOR');
+        $arrHeaderText = array('ITEM','COD. MED.', 'PRODUCTO', 'STOCK AL ' . $allInputs['hasta'], 'P.U. PONDERADO', 'VALOR');
         $arrHeaderAligns = array('L','C','L','R','R','R');
         $arrBoolMultiCell = array(0,1,0,1,1,0); // colocar 1 donde deseas utilizar multicell
         $countArray = count($arrWidthCol);
@@ -2236,7 +2236,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
         // APARTADO GRILLA
         //encabezado de la grilla
         $arrWidthCol = array(10,20,70,70,20);
-        $arrHeaderText = array('ITEM','COD. MED.', 'MEDICAMENTO', 'LABORATORIO', 'PRECIO VENTA');
+        $arrHeaderText = array('ITEM','COD. MED.', 'PRODUCTO', 'LABORATORIO', 'PRECIO VENTA');
         $arrHeaderAligns = array('L','C','L','L','R');
         $arrBoolMultiCell = array(0,0,0,0,0); // colocar 1 donde deseas utilizar multicell
         $countArray = count($arrWidthCol);
@@ -2383,7 +2383,7 @@ class CentralReportesFarmaciaMPDF extends CI_Controller {
             }
         // LISTADO DEL REPORTE
             $arrWidthCol = array(10,20,140,20); // total para un formato vertical = 190
-            $arrHeaderText = array('#','COD. MED.', 'MEDICAMENTO', 'STOCK ACTUAL');
+            $arrHeaderText = array('#','COD. MED.', 'PRODUCTO', 'STOCK ACTUAL');
             $arrHeaderAligns = array('C','C','C','C');
             $arrDetalleAligns = array('C','C','L','R');
             $arrBoolMultiCell = array(0,0,0,1); // colocar 1 donde deseas utilizar multicell

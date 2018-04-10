@@ -325,7 +325,7 @@ angular.module('theme.historialVentasFarm', ['theme.core.services'])
         { field: 'orden', name: 'orden_venta', displayName: 'N° ORDEN', maxWidth: '120' },
         { field: 'tipodocumento', name: 'descripcion_td', displayName: 'TIPO DOC.', width: '9%', cellClass: 'bg-lightblue'},
         { field: 'ticket', name: 'ticket_venta', displayName: 'TICKET', width: '9%', sort: { direction: uiGridConstants.DESC} },
-        { field: 'medicamento', name: 'denominacion', displayName: 'MEDICAMENTO', minWidth:'200'},
+        { field: 'medicamento', name: 'denominacion', displayName: 'PRODUCTO', minWidth:'200'},
         { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', width: '10%', visible: false},
         
         { field: 'fecha_movimiento', name: 'fecha_movimiento', displayName: 'FECHA DE EMISION', width: '12%', enableFiltering: false  },
@@ -435,7 +435,7 @@ angular.module('theme.historialVentasFarm', ['theme.core.services'])
         { field: 'orden', name: 'orden_venta', displayName: 'N° ORDEN', maxWidth: '120'},
         { field: 'tipodocumento', name: 'descripcion_td', displayName: 'TIPO DOC.', width: '9%', cellClass: 'bg-lightblue', visible: false},
         { field: 'receta_referencia', name: 'idsolicitudformula', displayName: 'N° SOLICITUD', width: '6%', sort: { direction: uiGridConstants.DESC} },
-        { field: 'medicamento', name: 'denominacion', displayName: 'MEDICAMENTO',  width: '15%', minWidth:'200'},
+        { field: 'medicamento', name: 'denominacion', displayName: 'PRODUCTO',  width: '15%', minWidth:'200'},
         { field: 'cliente', name: 'cliente', displayName: 'PACIENTE', minWidth:'100'},
         { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', width: '10%', visible: false},
         

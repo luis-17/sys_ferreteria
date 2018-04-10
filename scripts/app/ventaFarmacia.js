@@ -947,7 +947,7 @@ angular.module('theme.ventaFarmacia', ['theme.core.services'])
               multiSelect: false,
               columnDefs: [
                 { field: 'id', name: 'm.idmedicamento', displayName: 'COD.', maxWidth: 50 },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC} },
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC} },
                 { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO' },
                 { field: 'stock', name: 'stock_actual_malm', displayName: 'STOCK', maxWidth: 80, cellClass: 'text-right', enableFiltering: false  },
                 { field: 'stock_central', name: 'stock_central', displayName: 'STOCK CENTRAL', maxWidth: 100, cellClass: 'text-right', enableFiltering: false },
@@ -1193,7 +1193,7 @@ angular.module('theme.ventaFarmacia', ['theme.core.services'])
               multiSelect: false,
               columnDefs: [
                 { field: 'id', name: 'm.idmedicamento', displayName: 'COD.', maxWidth: 50 },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', minWidth: 100 },
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth: 100 },
                 { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO' },
                 { field: 'stock', name: 'stock_actual_malm', displayName: 'STOCK', maxWidth: 80, cellClass: 'text-right', enableFiltering: false  },
                 { field: 'stock_central', name: 'stock_central', displayName: 'STOCK CENTRAL', maxWidth: 100, cellClass: 'text-right', enableFiltering: false },
@@ -1624,7 +1624,7 @@ angular.module('theme.ventaFarmacia', ['theme.core.services'])
               //showGridFooter: true,
               columnDefs: [
                 { field: 'id', name: 'idmedicamento', displayName: 'ID', width: '10%', visible:true  },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', sort: { direction: uiGridConstants.ASC}},
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', sort: { direction: uiGridConstants.ASC}},
                 { field: 'precio_venta_sf', name: 'precio', displayName: 'PRECIO', width: '10%', cellClass:'text-right' },
                 { field: 'cantidad', name: 'cantidad', displayName: 'CANT.', width: '10%', cellClass:'text-center'  },
                 { field: 'valor', name: 'valor', displayName: 'VALOR', aggregationType: uiGridConstants.aggregationTypes.sum, width: '10%', cellClass:'text-center'  },
@@ -1816,7 +1816,7 @@ angular.module('theme.ventaFarmacia', ['theme.core.services'])
               //showGridFooter: true,
               columnDefs: [
                 { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID', width: '10%', visible:true  },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', sort: { direction: uiGridConstants.ASC}},
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', sort: { direction: uiGridConstants.ASC}},
                 { field: 'cantidad', name: 'cantidad', displayName: 'CANT.', width: '10%', cellClass:'text-center'  },
                 { field: 'precio_unitario', name: 'precio_unitario', displayName: 'P.U.', width: '10%', cellClass:'text-center'  },
                 { field: 'total_detalle', name: 'total_detalle', displayName: 'TOTAL', width: '10%', cellClass:'text-right' },
@@ -2043,7 +2043,7 @@ angular.module('theme.ventaFarmacia', ['theme.core.services'])
               //showGridFooter: true,
               columnDefs: [
                 { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID', width: '10%', visible:true  },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', sort: { direction: uiGridConstants.ASC}},
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', sort: { direction: uiGridConstants.ASC}},
                 { field: 'cantidad', name: 'cantidad', displayName: 'CANT.', width: '10%', cellClass:'text-center'  },
                 { field: 'precio_unitario', name: 'precio_unitario', displayName: 'P.U.', width: '10%', cellClass:'text-center'  },
                 { field: 'total_detalle', name: 'total_detalle', displayName: 'TOTAL', width: '10%', cellClass:'text-right' },

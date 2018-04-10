@@ -9,9 +9,6 @@ class Model_tipo_producto extends CI_Model {
 		//$this->db->select('idtipovia, descripcion_tv, abreviatura_tv');
 		$this->db->from('tipo_producto');
 		$this->db->where('estado_tp', 1);
-		if( $datos ){ 
-			$this->db->where('idmodulo', $datos['modulo']);
-		}
 		$this->db->where('estado_tp',1);
 		$this->db->order_by("nombre_tp");
 		return $this->db->get()->result_array();

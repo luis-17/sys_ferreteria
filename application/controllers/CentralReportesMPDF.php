@@ -3960,7 +3960,7 @@ class CentralReportesMPDF extends CI_Controller {
           $this->pdf->Cell(0,6,utf8_decode('RECETA MÉDICA'),1,0,'C');
           $this->pdf->Ln(8);
           $this->pdf->SetFont('Arial','B',9);
-          $this->pdf->Cell(80,6,utf8_decode('MEDICAMENTO'),0,0);
+          $this->pdf->Cell(80,6,utf8_decode('PRODUCTO'),0,0);
           $this->pdf->Cell(25,6,utf8_decode('CANTIDAD'),0,0);
           $this->pdf->Cell(117,6,strip_tags(utf8_decode('INDICACIONES')),0,0);
           $this->pdf->Ln(6);

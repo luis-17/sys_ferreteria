@@ -229,7 +229,7 @@ angular.module('theme.historiasAnteriores', ['theme.core.services','ui.grid.edit
               rowHeight: 30,
               multiSelect: false,
               columnDefs: [
-                { field: 'medicamento', displayName: 'Medicamento', width: '35%',  type:'object' },
+                { field: 'medicamento', displayName: 'PRODUCTO', width: '35%',  type:'object' },
                 { field: 'unidad', displayName: 'Medida' },
                 { field: 'cantidad', displayName: 'Cantidad' },
                 { field: 'indicaciones', displayName: 'Indicaciones', width: '30%' }

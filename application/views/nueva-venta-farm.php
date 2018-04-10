@@ -64,8 +64,8 @@
                     </fieldset>
                   </div>
                   <div class="col-md-6 col-sm-12">
-                    <fieldset class="row" style="padding-right: 10px;">
-                      <legend class="col-md-12 p-n"> Datos de la Venta 
+                    <fieldset class="" style="padding-right: 10px;">
+                      <legend class=""> Datos de la Venta 
                         <div class="pull-right text-right">
                           <small class="text-default block mb-xs" style="font-size: 18px;line-height: 1;" > {{ fDataVenta.aleasDocumento }} N° <strong>{{ fDataVenta.ticket }}</strong>
                             <button tooltip-placement="bottom" tooltip="Actualizar" title="" type="button" class="btn btn-xs btn-warning" ng-click="generarCodigoTicket(); generarNumOrden();$event.preventDefault();"> <i class="ti ti-reload "></i> </button>
@@ -75,49 +75,39 @@
                           </small>
                         </div>
                       </legend> 
-                      <!-- <div class="form-group mb-md col-md-6 col-sm-12 pl-xs" ng-if="fDataVenta.idtipodocumento == 3"> 
-                        <label class="control-label mb-xs"> Tipo de Documento </label>
-                        <select class="form-control input-sm" ng-model="fDataVenta.idtipodocumento" ng-change="fDataVenta.ruc = null; generarCodigoTicket();" ng-options="item.id as item.descripcion for item in listaTipoDocumento" required tabindex="102"> </select> 
-                      </div> -->
-                      <div class="form-group mb-md col-md-3 col-sm-12 p-n">
-                        <label class="control-label mb-xs"> Tipo de Documento </label>
-                        <select class="form-control input-sm" ng-model="fDataVenta.idtipodocumento" ng-change="onChangeTipoDocumento();" ng-options="item.id as item.descripcion for item in listaTipoDocumento" required tabindex="102"> </select> 
-                      </div>
-                      <div class="form-group mb-md col-md-3 col-sm-12" ng-if="fDataVenta.idtipodocumento != 2">
-                        <label class="control-label mb-xs"> RUC Empresa </label>
-                        <input type="text" ng-model="fDataVenta.ruc" class="form-control input-sm" tabindex="103" placeholder="" disabled  /> 
-                      </div>
-                      <div class="form-group mb-md col-md-3 col-sm-12" ng-if="fDataVenta.idtipodocumento == 2">
-                        <label class="control-label mb-xs"> RUC Empresa <small  class="text-danger">(*)</small> </label>
-                        <input type="text" ng-model="fDataVenta.ruc" class="form-control input-sm" tabindex="103" placeholder="" required disabled  /> 
-                      </div>
-                      <div class="form-group mb-md col-md-3 col-sm-12" style="display:none;">
-                        <label class="control-label mb-xs"> Tipo de precio </label>
-                        <select class="form-control input-sm" ng-change="calcularTotales();" ng-model="fDataVenta.precio" ng-options="item as item.descripcion for item in listaPrecios" tabindex="104"> </select> 
-                      </div>
-                      <div class="form-group mb-md col-md-3 col-sm-12">
-                        <label class="control-label mb-xs"> Personal de Salud </label>
-                        <input type="text" ng-model="fDataVenta.medico" class="form-control input-sm" tabindex="104" placeholder="Busque Personal de Salud." 
-                          uib-typeahead="item as item.descripcion for item in getPersonalMedicoAutocomplete($viewValue)" typeahead-min-length="2" ng-disabled="personalSaludDisabled" /> 
-                      </div>
-                      <div class="form-group mb-md pt-n mt-n col-md-3 col-sm-12"> 
-                          <label class="mb-xs"><input type="checkbox" value="" ng-model="fDataVenta.esclienteexterno" ng-change="onChangeClienteExterno();" tabindex="120" > Cliente Externo</label> 
+                      <div class="row">
+                        <div class="form-group mb-md col-md-3 col-sm-12">
+                          <label class="control-label mb-xs"> Tipo de Documento </label>
+                          <select class="form-control input-sm" ng-model="fDataVenta.idtipodocumento" ng-change="onChangeTipoDocumento();" ng-options="item.id as item.descripcion for item in listaTipoDocumento" required tabindex="102"> </select> 
+                        </div>
+                        <div class="form-group mb-md col-md-3 col-sm-12" ng-if="fDataVenta.idtipodocumento != 2">
+                          <label class="control-label mb-xs"> RUC Empresa </label>
+                          <input type="text" ng-model="fDataVenta.ruc" class="form-control input-sm" tabindex="103" placeholder="" disabled  /> 
+                        </div>
+                        <div class="form-group mb-md col-md-3 col-sm-12" ng-if="fDataVenta.idtipodocumento == 2">
+                          <label class="control-label mb-xs"> RUC Empresa <small  class="text-danger">(*)</small> </label>
+                          <input type="text" ng-model="fDataVenta.ruc" class="form-control input-sm" tabindex="103" placeholder="" required disabled  /> 
+                        </div>
+                        <div class="form-group mb-md col-md-3 col-sm-12" style="display:none;">
+                          <label class="control-label mb-xs"> Tipo de precio </label>
+                          <select class="form-control input-sm" ng-change="calcularTotales();" ng-model="fDataVenta.precio" ng-options="item as item.descripcion for item in listaPrecios" tabindex="104"> </select> 
+                        </div> 
+                        <div class="form-group mb-md pt-n mt-n col-md-3 col-sm-12"> 
                           <label class="mb-xs"><input type="checkbox" value="" ng-model="fDataVenta.estemporal" tabindex="130" ng-change="limpiaDatosMedicamento();" ng-disabled="gridOptions.data.length>0"> Venta Sin Stock</label>
-                          <label class="mb-xs"><input type="checkbox" value="" ng-model="fDataVenta.esPreparado" tabindex="140" ng-change="limpiaDatosMedicamento();" ng-disabled="gridOptions.data.length>0"> Venta preparados</label>
+                        </div> 
+                        <div class="form-group mb-md col-md-3 col-sm-12">
+                          <label class="control-label mb-xs"> Sub-Almacén</label>
+                          <select class="form-control input-sm" ng-model="fDataVenta.idsubalmacen" ng-options="item.id as item.descripcion for item in listaSubAlmacenVenta" > </select> 
+                        </div>
                       </div>
-                      <div class="form-group mb-md col-md-3 col-sm-12 p-n">
-                        <label class="control-label mb-xs"> Sub-Almacén</label>
-                        <select class="form-control input-sm" ng-model="fDataVenta.idsubalmacen" ng-options="item.id as item.descripcion for item in listaSubAlmacenVenta" > </select> 
-
-                      </div>
-                     
-                      <div class="form-group mb-md col-md-3 col-sm-12 pl-xs">
-                        <label class="control-label mb-xs"> Medio de pago </label>
-                        <select class="form-control input-sm" ng-change="onChangeMedioPago();" ng-model="fDataVenta.idmediopago" ng-options="item.id as item.descripcion for item in listaMedioPago" tabindex="150"> </select> 
-                      </div>
-                      <!-- <div class="form-group mb-md col-md-3 col-sm-12" ng-if="fDataVenta.cliente.sede_convenio">
-                        <label><input type="checkbox" value="" ng-model="fDataVenta.convenio" tabindex="155" ng-change="elegirConvenio();" ng-disabled="gridOptions.data.length>0"> Convenio </label>
-                      </div> -->
+                      <div class="row">
+                        
+                       
+                        <div class="form-group mb-md col-md-3 col-sm-12">
+                          <label class="control-label mb-xs"> Medio de pago </label>
+                          <select class="form-control input-sm" ng-change="onChangeMedioPago();" ng-model="fDataVenta.idmediopago" ng-options="item.id as item.descripcion for item in listaMedioPago" tabindex="150"> </select> 
+                        </div>
+                      </div> 
                       <div class="form-group mb-md col-md-3 col-sm-12 mt-lg" ng-if="fDataVenta.esPreparado">
                         <!-- <label class="control-label mb-xs"> Nº Solicitud <small class="text-danger">(*)</small> </label> -->
                         <div class="input-group">
@@ -154,9 +144,9 @@
                             <!-- <input id="temporalProducto" type="text" ng-model="fDataVenta.temporal.producto" class="form-control input-sm" tabindex="108" placeholder="Busque Producto/Servicio." typeahead-loading="loadingLocations" 
                             uib-typeahead="item as item.descripcion + ' | ' + item.stockActual for item in getProductoAutocomplete($viewValue)"  typeahead-on-select="getSelectedProducto($item, $model, $label)" typeahead-min-length="3" typeahead-show-hint="true" autocomplete ="off"/>  -->
                             <span class="input-group-btn">
-                            <button class="btn btn-default btn-sm" type="button" ng-click="btnBuscarProducto('lg')"><i class="fa fa-search"></i> </button>
+                              <button class="btn btn-default btn-sm" type="button" ng-click="btnBuscarProducto('lg')"><i class="fa fa-search"></i> </button>
                               <button class="btn btn-default btn-sm" type="button" ng-click="verPopupStocks('lg')" ng-disabled="!fDataVenta.temporal.producto.id">VER STOCKS [F7] </button>
-                              <button class="btn btn-default btn-sm" type="button" ng-click="verPopupPrincipioActivo('lg')" ng-disabled="!fDataVenta.temporal.producto.id">INFO.PRODUCTO [F8] </button>
+                              <!-- <button class="btn btn-default btn-sm" type="button" ng-click="verPopupPrincipioActivo('lg')" ng-disabled="!fDataVenta.temporal.producto.id">INFO.PRODUCTO [F8] </button> -->
                             </span>
                           </div> 
                           <i ng-show="loadingLocations" class="fa fa-refresh"></i>
@@ -189,11 +179,11 @@
                         <div class="form-group mb-sm mt-lg pl-n pr-n col-md-1 col-sm-6"> 
                           <div class="btn-group" style="min-width: 100%">
                               <a href="" class="btn btn-info-alt btn-sm" tabindex="200" ng-click="agregarItem(); $event.preventDefault();" style="min-width: 80%;">Agregar</a>
-                              <a href="" class="btn btn-info-alt btn-sm dropdown-toggle" tabindex="210" data-toggle="dropdown"><span class="caret"></span></a>
-                              <ul class="dropdown-menu sm" role="menu" style="padding:0;">
+                              <!-- <a href="" class="btn btn-info-alt btn-sm dropdown-toggle" tabindex="210" data-toggle="dropdown"><span class="caret"></span></a> -->
+                              <!-- <ul class="dropdown-menu sm" role="menu" style="padding:0;">
                                   <li><a ng-click="btnAgregarReceta(); $event.preventDefault();" class="btn btn-info-alt" href="" tabindex="220">DESDE RECETA MED.</a></li>
                                   
-                              </ul>
+                              </ul> -->
                           </div>
                         </div>
                       </div>

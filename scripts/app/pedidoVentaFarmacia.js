@@ -468,7 +468,7 @@ angular.module('theme.pedidoVenta', ['theme.core.services'])
               multiSelect: false,
               columnDefs: [
                 { field: 'id', name: 'me.idmedicamento', displayName: 'ID', maxWidth: 50 },
-                { field: 'medicamento', name: 'me.denominacion', displayName: 'Medicamento', minWidth: 120 },
+                { field: 'medicamento', name: 'me.denominacion', displayName: 'PRODUCTO', minWidth: 120 },
                 { field: 'principio_activo', name: 'principios', displayName: 'Principio Activo', minWidth: 200 },
                 { field: 'stock', name: 'stock_actual_malm', displayName: 'Stock', maxWidth: 80 },
                 { field: 'precio', name: 'precio_venta', displayName: 'Precio', maxWidth: 80 },

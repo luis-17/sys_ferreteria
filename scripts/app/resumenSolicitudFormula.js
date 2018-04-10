@@ -188,7 +188,7 @@ angular.module('theme.resumenSolicitudFormula', ['theme.core.services'])
             multiSelect: false,
             columnDefs: [ 
               { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID MEDICAMENTO', width: '6%' },
-              { field: 'denominacion', name: 'denominacion', displayName: 'Medicamento'},
+              { field: 'denominacion', name: 'denominacion', displayName: 'PRODUCTO'},
               { field: 'cantidad', name: 'cantidad', displayName: 'Cant.', width: '6%' },
               { field: 'precio_unitario', name: 'precio_unitario', displayName: 'Precio Unit.', width: '10%' },
               { field: 'total_detalle', name: 'total_detalle', displayName: 'Total', width: '10%', cellClass: 'bg-lightblue' }

@@ -885,7 +885,7 @@ angular.module('theme.atencionProcedimiento', ['theme.core.services','ui.grid.ed
                   multiSelect: false,
                   columnDefs: [
                     { field: 'id', name: 'm.idmedicamento', displayName: 'COD.', maxWidth: 80 },
-                    { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC} },
+                    { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC} },
                     { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', visible: false },
                     { field: 'stock', name: 'stock_actual_malm', displayName: 'STOCK', maxWidth: 80, cellClass: 'text-center', enableFiltering: false  }
                   ],
@@ -1177,7 +1177,7 @@ angular.module('theme.atencionProcedimiento', ['theme.core.services','ui.grid.ed
                   multiSelect: false,
                   columnDefs: [
                     { field: 'idreceta', name: 'idreceta', displayName: 'N° Receta', width: '8%', enableCellEdit: false }, 
-                    { field: 'medicamento', name: 'medicamento', displayName: 'Medicamento', width: '30%', enableCellEdit: false }, 
+                    { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', width: '30%', enableCellEdit: false }, 
                     { field: 'indicaciones', name: 'indicaciones', displayName: 'Indicaciones', enableCellEdit: false },
                     { field: 'cantidad', name: 'cantidad', displayName: 'Cantidad', width: '10%', enableCellEdit: false },
                   ]

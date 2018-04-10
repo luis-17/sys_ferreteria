@@ -149,7 +149,7 @@ angular.module('theme.medicamento', ['theme.core.services'])
       columnDefs: [
         { field: 'id', name: 'idmedicamento', displayName: 'ID', width: 60, sort: { direction: uiGridConstants.DESC} },
         { field: 'codigo_barra', name: 'codigo_barra', displayName: 'COD. BARRA', width: 96,  visible:false },
-        { field: 'medicamento', name: 'medicamento', displayName: 'Medicamento', minWidth:200},
+        { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth:200},
         { field: 'presentacion', name: 'presentacion', displayName: 'Presentación', width: 110 },
         { field: 'laboratorio', name: 'nombre_lab', displayName: 'Laboratorio', width: 220 },
         { field: 'medidaconcentracion', name: 'descripcion_mc', displayName: 'Med. Concentración', width: 140 },

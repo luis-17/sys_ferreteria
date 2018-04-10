@@ -360,7 +360,7 @@ angular.module('theme.historialAtenciones', ['theme.core.services','ui.grid.edit
             rowHeight: 30,
             multiSelect: false,
             columnDefs: [
-              { field: 'medicamento', displayName: 'Medicamento', width: '35%',  type:'object' },
+              { field: 'medicamento', displayName: 'PRODUCTO', width: '35%',  type:'object' },
               { field: 'unidad', displayName: 'Medida' },
               { field: 'cantidad', displayName: 'Cantidad' },
               { field: 'indicaciones', displayName: 'Indicaciones', width: '30%' }
@@ -998,7 +998,7 @@ angular.module('theme.historialAtenciones', ['theme.core.services','ui.grid.edit
                     { field: 'fecha', name: 'fecha_receta', displayName: 'Fecha', width: '14%', enableCellEdit: false }, 
                     { field: 'acto_medico', name: 'idatencionmedica', displayName: 'Acto Médico', width: '10%', enableCellEdit: false }, 
                     { field: 'idreceta', name: 'idreceta', displayName: 'N° Receta', width: '8%', enableCellEdit: false }, 
-                    { field: 'medicamento', name: 'medicamento', displayName: 'Medicamento', enableCellEdit: false }, 
+                    { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', enableCellEdit: false }, 
                     { field: 'presentacion', name: 'presentacion', displayName: 'Presentación', width: '10%', enableCellEdit: false },
                     { field: 'cantidad', name: 'cantidad', displayName: 'Cantidad', width: '10%', enableCellEdit: false },
                     { field: 'accion', displayName: 'Acción', enableCellEdit: false, width: '8%', 
@@ -1057,7 +1057,7 @@ angular.module('theme.historialAtenciones', ['theme.core.services','ui.grid.edit
                   rowHeight: 30,
                   multiSelect: false,
                   columnDefs: [
-                    { field: 'medicamento.medicamento', displayName: 'Medicamento', width: '35%', enableCellEdit: false, type:'object' },
+                    { field: 'medicamento.medicamento', displayName: 'PRODUCTO', width: '35%', enableCellEdit: false, type:'object' },
                     { field: 'medicamento.idunidadmedida', displayName: 'Presentación', enableCellEdit: false },
                     { field: 'cantidad', displayName: 'Cantidad', enableCellEdit: false },
                     { field: 'indicacion', displayName: 'Indicaciones', width: '30%', enableCellEdit: false },
@@ -1746,7 +1746,7 @@ angular.module('theme.historialAtenciones', ['theme.core.services','ui.grid.edit
                       rowHeight: 30,
                       multiSelect: false,
                       columnDefs: [
-                        { field: 'medicamento', displayName: 'Medicamento', width: '35%',  type:'object' },
+                        { field: 'medicamento', displayName: 'PRODUCTO', width: '35%',  type:'object' },
                         { field: 'unidad', displayName: 'Medida' },
                         { field: 'cantidad', displayName: 'Cantidad' },
                         { field: 'indicaciones', displayName: 'Indicaciones', width: '30%' }

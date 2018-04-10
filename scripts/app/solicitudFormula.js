@@ -510,7 +510,7 @@ angular.module('theme.solicitudFormula', ['theme.core.services'])
               multiSelect: false,
               columnDefs: [
                 { field: 'id', name: 'm.idmedicamento', displayName: 'COD.', maxWidth: 50, enableCellEdit: false },
-                { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC}, cellClass: 'ui-editCell', },
+                { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth: 100,  sort: { direction: uiGridConstants.ASC}, cellClass: 'ui-editCell', },
                 { field: 'precio', name: 'precio_venta', displayName: 'PRECIO', maxWidth: 80, cellClass: 'text-right', enableFiltering: false, enableCellEdit: false },
                 { field: 'accion', displayName: '', width: '4%', enableCellEdit: false,
                   enableSorting: false, enableFiltering: false,

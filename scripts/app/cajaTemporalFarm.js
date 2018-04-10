@@ -227,7 +227,7 @@ angular.module('theme.cajaTemporalFarm', ['theme.core.services'])
         { field: 'id', name: 'iddetallemovimiento', displayName: 'ID', maxWidth: '60', visible: false, sort: { direction: uiGridConstants.DESC} },
         { field: 'fecha_movimiento', name: 'fecha_movimiento', displayName: 'FECHA DE MOV.', maxWidth: '125', enableFiltering: false  },
         { field: 'idmedicamento', name: 'idmedicamento', displayName: 'COD. MED.', maxWidth: '120' },
-        { field: 'medicamento', name: 'denominacion', displayName: 'MEDICAMENTO', minWidth:'200'},
+        { field: 'medicamento', name: 'denominacion', displayName: 'PRODUCTO', minWidth:'200'},
        
         { field: 'laboratorio', name: 'laboratorio', displayName: 'LABORATORIO', width: '15%', visible: true},
         { field: 'cantidad', name: 'cantidad', displayName: 'CANT.', width: '80' },

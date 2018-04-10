@@ -106,7 +106,7 @@ angular.module('theme.medicamentoAlmacen', ['theme.core.services'])
       multiSelect: true,
       columnDefs: [
         { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID', width: 50, enableCellEdit: false, pinnedLeft:true,  sort: { direction: uiGridConstants.ASC} },
-        { field: 'medicamento', name: 'med.denominacion', displayName: 'MEDICAMENTO', minWidth: 290/*, maxWidth: 300*/, enableCellEdit: false, pinnedLeft:true },
+        { field: 'medicamento', name: 'med.denominacion', displayName: 'PRODUCTO', minWidth: 290/*, maxWidth: 300*/, enableCellEdit: false, pinnedLeft:true },
         { field: 'estadoMed', type: 'object', name: 'estado_fma', displayName: 'ESTADO', width: 140, enableFiltering: false, enableCellEdit: false, pinnedRight:true, 
           cellTemplate:'<label ng-click="grid.appScope.btnHabilitarDeshabilitar(row)" style="box-shadow: 1px 1px 0 black; margin: 6px auto; display: block; width: 120px;" class="label label-hand {{ COL_FIELD.clase }} ">{{ COL_FIELD.string }}</label>' },
         { field: 'stock_inicial', name: 'stock_inicial', displayName: 'STOCK INICIAL', width: 130, cellClass:'ui-editCell' },
@@ -364,7 +364,7 @@ angular.module('theme.medicamentoAlmacen', ['theme.core.services'])
             multiSelect: true,
             columnDefs: [
               { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID', width: 50 },
-              { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', width: 350,  sort: { direction: uiGridConstants.ASC} },
+              { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', width: 350,  sort: { direction: uiGridConstants.ASC} },
               { field: 'presentacion', name: 'presentacion', displayName: 'PRESENTACION', width: 126 },
               { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', width: 220 },
               { field: 'estadoGen', type: 'object', name: 'generico', displayName: 'TIPO', width: 160, enableFiltering: false, 
@@ -713,7 +713,7 @@ angular.module('theme.medicamentoAlmacen', ['theme.core.services'])
       multiSelect: false,
       columnDefs: [
         { field: 'idmedicamento', name: 'idmedicamento', displayName: 'ID', width: 80, sort: { direction: uiGridConstants.DESC}, enableCellEdit: false, pinnedLeft:true },
-        { field: 'medicamento', name: 'medicamento', displayName: 'MEDICAMENTO', minWidth: 290/*, maxWidth: 300*/,  enableCellEdit: false, pinnedLeft:false },
+        { field: 'medicamento', name: 'medicamento', displayName: 'PRODUCTO', minWidth: 290/*, maxWidth: 300*/,  enableCellEdit: false, pinnedLeft:false },
         { field: 'stock_inicial', name: 'stock_inicial', displayName: 'STOCK INICIAL', width: 130, cellClass:'ui-editCell' },
         { field: 'stock_entradas', name: 'stock_entradas', displayName: 'STOCK ENTRADAS', width: 136, cellClass:'ui-editCell' },
         { field: 'stock_salidas', name: 'stock_salidas', displayName: 'STOCK SALIDAS', width: 130, cellClass:'ui-editCell' },

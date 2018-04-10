@@ -48,7 +48,7 @@ angular.module('theme.controlStockFarmacia', ['theme.core.services'])
 	  multiSelect: true,
 	  columnDefs: [
 	    { field: 'idmedicamento', name: 'idmedicamento', displayName: 'COD.MED.', width: '8%', visible: false },
-	    { field: 'medicamento', name: 'denominacion', displayName: 'MEDICAMENTO' },
+	    { field: 'medicamento', name: 'denominacion', displayName: 'PRODUCTO' },
 	    { field: 'laboratorio', name: 'nombre_lab', displayName: 'LABORATORIO', width: '15%' },
 	    { field: 'almacen', name: 'almacen', displayName: 'ALMACEN', width: '18%' },
 	    { field: 'stock_actual_malm', name: 'stock_actual_malm', displayName: 'STOCK ACTUAL', width: '8%', enableFiltering: false, cellClass: "text-right" },

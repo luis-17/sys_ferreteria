@@ -3,9 +3,9 @@
 </div>
 <div class="modal-body">
     <form class="row" name="formStocks">
-    	<div class="form-group mb-sm col-md-6 f-18">
+    	<div class="form-group mb-sm col-md-12 f-18">
 			<label class="control-label block mb-xs">PRODUCTO: </label>
-			<span>{{fDataVenta.temporal.producto.descripcion}}</span>
+			<b>{{fDataVenta.temporal.producto.descripcion}}</b>
 		</div>
     	<div class="row">
 	        <div class="col-md-12">

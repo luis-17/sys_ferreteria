@@ -373,7 +373,7 @@ class CentralReportesFarmacia extends CI_Controller {
     $this->excel->getActiveSheet()->getColumnDimension('E')->setWidth(16);
 
     $dataColumnsTP = array( 
-      array('CÓDIGO', 'LABORATORIO','MEDICAMENTO', 'CANTIDAD', 'MONTO (S/.)')
+      array('CÓDIGO', 'LABORATORIO','PRODUCTO', 'CANTIDAD', 'MONTO (S/.)')
     ); 
     $styleArray = array(
       'borders' => array(
@@ -480,7 +480,7 @@ class CentralReportesFarmacia extends CI_Controller {
     }
 
     $dataColumnsTP = array( 
-      array('CÓDIGO', 'MEDICAMENTO', 'CANTIDAD', 'MONTO (S/.)')
+      array('CÓDIGO', 'PRODUCTO', 'CANTIDAD', 'MONTO (S/.)')
     ); 
     $styleArray = array(
       'borders' => array(
@@ -847,7 +847,7 @@ class CentralReportesFarmacia extends CI_Controller {
 
 
     $dataColumnsTP = array( 
-      array('ITEM', 'MEDICAMENTO', 'LABORATORIO', 'STOCK MINIMO', 'STOCK CRITICO', 'STOCK MAXIMO', 'STOCK ACTUAL', 'ESTADO')
+      array('ITEM', 'PRODUCTO', 'LABORATORIO', 'STOCK MINIMO', 'STOCK CRITICO', 'STOCK MAXIMO', 'STOCK ACTUAL', 'ESTADO')
     ); 
     $styleArray = array(
       'borders' => array(
@@ -1044,7 +1044,7 @@ class CentralReportesFarmacia extends CI_Controller {
 
     $lista = $this->model_medicamento_almacen->m_cargar_medicamentos_almacen_para_pdf($allInputs['paginate'],$allInputs['resultado']);
     if( $allInputs['resultado']['laboratorio']['id'] == 0 ){
-      $singleRow = array('ITEM','COD.MED.','FORMA FARMACEUTICA','MEDICAMENTO','REG. SANITARIO','PRINCIPIOS ACTIVOS','LABORATORIO','STOCK INICIAL','STOCK ENTRADAS','STOCK SALIDAS', 'STOCK ACTUAL','ULT. PRECIO DE COMPRA','UTILIDAD %','UTILIDAD S/.','PRECIO VENTA'); 
+      $singleRow = array('ITEM','COD.MED.','FORMA FARMACEUTICA','PRODUCTO','REG. SANITARIO','PRINCIPIOS ACTIVOS','LABORATORIO','STOCK INICIAL','STOCK ENTRADAS','STOCK SALIDAS', 'STOCK ACTUAL','ULT. PRECIO DE COMPRA','UTILIDAD %','UTILIDAD S/.','PRECIO VENTA'); 
       $writer->addRowWithStyle($singleRow, $styleH1);
       
       $i = 0;
@@ -1070,7 +1070,7 @@ class CentralReportesFarmacia extends CI_Controller {
         );
       }
     }else{
-      $singleRow = array('ITEM','COD.MED.','FORMA FARMACEUTICA', 'MEDICAMENTO', 'REG. SANITARIO', 'PRINCIPIOS ACTIVOS', 'STOCK INICIAL', 'STOCK ENTRADAS', 'STOCK SALIDAS', 'STOCK ACTUAL','ULT. PRECIO DE COMPRA','UTILIDAD %','UTILIDAD S/.','PRECIO VENTA'); 
+      $singleRow = array('ITEM','COD.MED.','FORMA FARMACEUTICA', 'PRODUCTO', 'REG. SANITARIO', 'PRINCIPIOS ACTIVOS', 'STOCK INICIAL', 'STOCK ENTRADAS', 'STOCK SALIDAS', 'STOCK ACTUAL','ULT. PRECIO DE COMPRA','UTILIDAD %','UTILIDAD S/.','PRECIO VENTA'); 
       $writer->addRow($singleRow);
       $i = 0;
       foreach ($lista as $row) { 
@@ -1651,7 +1651,7 @@ class CentralReportesFarmacia extends CI_Controller {
     
     //var_dump($arrListadoProd); exit();
     $dataColumnsTP = array( 
-      array('ITEM','COD. MED.', 'MEDICAMENTO', 'STOCK AL ' . $allInputs['hasta'], 'P.U. PONDERADO', 'VALOR', 'LABORATORIO')
+      array('ITEM','COD. MED.', 'PRODUCTO', 'STOCK AL ' . $allInputs['hasta'], 'P.U. PONDERADO', 'VALOR', 'LABORATORIO')
     );
     $this->excel->setActiveSheetIndex($cont);
     
@@ -1787,7 +1787,7 @@ class CentralReportesFarmacia extends CI_Controller {
       
     }
     $dataColumnsTP = array( 
-      array('ITEM','COD. MED.', 'MEDICAMENTO', 'LABORATORIO', 'PRECIO VENTA')
+      array('ITEM','COD. MED.', 'PRODUCTO', 'LABORATORIO', 'PRECIO VENTA')
     );
     $this->excel->setActiveSheetIndex($cont);
     $this->excel->getActiveSheet()->setTitle('Tarifario'); 
@@ -1937,7 +1937,7 @@ class CentralReportesFarmacia extends CI_Controller {
       
     }
     $dataColumnsTP = array( 
-      array('ITEM','LOTE', 'MEDICAMENTO','LABORATORIO', 'ALMACEN', 'FECHA VENCIMIENTO','ESTADO')
+      array('ITEM','LOTE', 'PRODUCTO','LABORATORIO', 'ALMACEN', 'FECHA VENCIMIENTO','ESTADO')
     );
     $this->excel->setActiveSheetIndex($cont);
     $this->excel->getActiveSheet()->setTitle('Med. Venc.'); 
@@ -2099,7 +2099,7 @@ class CentralReportesFarmacia extends CI_Controller {
       
     }
     $dataColumnsTP = array( 
-      array('ITEM','Nº ORDEN','TIPO DOCUMENTO','TICKET', 'MEDICAMENTO','LABORATORIO', 'FECHA VENTA','CANTIDAD','P. UNIT.', 'TOTAL' )
+      array('ITEM','Nº ORDEN','TIPO DOCUMENTO','TICKET', 'PRODUCTO','LABORATORIO', 'FECHA VENTA','CANTIDAD','P. UNIT.', 'TOTAL' )
     );
     $this->excel->setActiveSheetIndex($cont);
     $this->excel->getActiveSheet()->setTitle($paramDatos['desde'].' - '.$paramDatos['hasta']); 
@@ -2250,7 +2250,7 @@ class CentralReportesFarmacia extends CI_Controller {
       
     }
     $dataColumnsTP = array( 
-      array('ITEM','FECHA VENTA','COD. MED.', 'MEDICAMENTO','LABORATORIO', 'CANTIDAD','P. UNIT.', 'TOTAL', 'STOCK ACTUAL' )
+      array('ITEM','FECHA VENTA','COD. MED.', 'PRODUCTO','LABORATORIO', 'CANTIDAD','P. UNIT.', 'TOTAL', 'STOCK ACTUAL' )
     );
     $this->excel->setActiveSheetIndex($cont);
     $this->excel->getActiveSheet()->setTitle($paramDatos['desde'].' - '.$paramDatos['hasta']); 
@@ -4480,7 +4480,7 @@ class CentralReportesFarmacia extends CI_Controller {
 
     $arrEncabezado = array();
     $arrListadoProd = array();
-    $arrEncabezado = array('ID','FECHA','HORA','CAJA','TIPO DE DOCUMENTO','N° DE DOCUMENTO','TURNO','MEDICAMENTO','LABORATORIO','MONTO'); 
+    $arrEncabezado = array('ID','FECHA','HORA','CAJA','TIPO DE DOCUMENTO','N° DE DOCUMENTO','TURNO','PRODUCTO','LABORATORIO','MONTO'); 
     $styleArrayHeader = array(
       'borders' => array(
         'allborders' => array( 

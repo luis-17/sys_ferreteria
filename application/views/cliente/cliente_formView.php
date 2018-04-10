@@ -31,7 +31,7 @@
 				<label class="control-label mb-xs">Teléfono Casa  </label>
 				<input type="tel" class="form-control input-sm" ng-model="fData.telefono" placeholder="Registre su teléfono" ng-pattern="/^[0-9]{7}$/" ng-minlength="7" ng-maxlength="7" tabindex="6" />
 			</div>			
-			<div class="form-group mb-md col-md-4" >
+			<!-- <div class="form-group mb-md col-md-4" >
 				<label class="control-label mb-xs"> Asignar Empresa <small style="color: #a9a9a9;">(Salud Ocupacional)</small> </label>
 				<div class="input-group">
 					<span class="input-group-btn ">
@@ -45,7 +45,7 @@
                 <div ng-show="noResultsLD">
                   <i class="fa fa-remove"></i> No se encontró resultados 
                 </div>
-			</div>
+			</div> -->
 		</div>
 		<div class="row">
 			<div class="form-group mb-md col-md-4" >
@@ -58,13 +58,13 @@
 					<input type="text" class="form-control input-sm mask" data-inputmask="'alias': 'dd-mm-yyyy'" ng-model="fData.fecha_nacimiento" required tabindex="8"/> 
 				</div>
 			</div>
-			<div class="form-group mb-md col-md-2" >
+			<!-- <div class="form-group mb-md col-md-2" >
 				<label class="control-label mb-xs"> Salud Ocupacional </label>  
 				<label class=""> 
 					<input type="checkbox" ng-disabled="disabledPSO" class="" ng-model="fData.pertenece_salud_ocup" ng-false-value="2" ng-true-value="1" tabindex="9"/> 
 					¿Asigna a Salud Ocup.?
 				</label>
-			</div>
+			</div> -->
 			<div class="form-group mb-md col-md-2" >
 				<label class="block" style="margin-bottom: 4px;"> Sexo <small class="text-danger">(*)</small> </label>
 				<select class="form-control input-sm" ng-model="fData.sexo" ng-options="item.id as item.descripcion for item in listaSexos" tabindex="10" required > </select>

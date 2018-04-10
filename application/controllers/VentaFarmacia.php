@@ -1226,13 +1226,13 @@ class VentaFarmacia extends CI_Controller {
 	    		}
 	    	}
     	}
-    	if( $this->sessionHospital['key_group'] != 'key_sistemas'  ){
+    	// if( $this->sessionHospital['key_group'] != 'key_sistemas'  ){
     		$allInputs['idsedeempresaadmin'] = $this->sessionHospital['idsedeempresaadmin'];
     		$allInputs['idalmacen'] = $this->sessionHospital['idalmacenfarmacia'];
-    		if( $this->sessionHospital['key_group'] != 'key_dir_far' ){
+    		//if( $this->sessionHospital['key_group'] != 'key_dir_far' ){
 				$allInputs['idsubalmacen'] = $this->sessionHospital['idsubalmacenfarmacia'];
-    		}
-    	}
+    		//}
+    	// }
 	// CALCULAR PUNTOS
     	if( empty($allInputs['cliente_afiliado']) ){
 	    	if( !empty($allInputs['numero_documento_afiliado']) ){
@@ -1332,91 +1332,6 @@ class VentaFarmacia extends CI_Controller {
 		    	->set_output(json_encode($arrData));
 		    return;
     	}
-		// COMPROBAR SI YA SE REGISTRO LA SOLICITUD DE FORMULAS
-		$allInputs['codigo_pedido'] = NULL;
-		if( $allInputs['esPreparado'] && $allInputs['boolSolicitud'] ){
-			$estado = null;
-			foreach ($allInputs['detalle'] as $row) {
-				$arrDetalle = $this->model_solicitud_formula->m_verificar_estado_detalle_solicitud($row);
-				$estado = $arrDetalle['estado_detalle_sol'];
-				if( $estado != 1 ){
-					$arrData['message'] = 'No se pudo registrar. Al menos un producto de la solicitud ya no está disponible';
-		    		$arrData['flag'] = 0;
-		    		$this->output
-				    	->set_content_type('application/json')
-				    	->set_output(json_encode($arrData));
-				    return;
-				}
-				if( $arrDetalle['idsolicitudformula'] !=  $allInputs['idsolicitudformula'] ){
-					$arrData['message'] = 'No se pudo registrar. EL número de la solicitud es incorrecta. Presione [F3] y cargue nuevamente la solicitud';
-		    		$arrData['flag'] = 0;
-		    		$this->output
-				    	->set_content_type('application/json')
-				    	->set_output(json_encode($arrData));
-				    return;
-				}
-				if( $arrDetalle['idcliente'] !=  $allInputs['cliente']['id'] ){
-					$arrData['message'] = 'No se pudo registrar. EL cliente no concuerda con la solicitud. Presione [F3] y cargue nuevamente la solicitud';
-		    		$arrData['flag'] = 0;
-		    		$this->output
-				    	->set_content_type('application/json')
-				    	->set_output(json_encode($arrData));
-				    return;
-				}
-			}
-			if( !empty($allInputs['a_cuenta'])){
-				if( $allInputs['a_cuenta'] < $allInputs['total']*0.5 && $allInputs['idsolicitudformula'] != 4031 ){
-					$arrData['message'] = 'El monto a cuenta no puede ser menor al 50% del total';
-		    		$arrData['flag'] = 0;
-		    		$this->output
-				    	->set_content_type('application/json')
-				    	->set_output(json_encode($arrData));
-				    return;
-				}
-				$allInputs['total'] = $allInputs['a_cuenta']; // para el 1er pago de Preparados
-				$allInputs['igv'] = NULL;
-				$allInputs['subtotal'] = NULL;
-			}
-			// var_dump($allInputs); exit();
-			// GENERAR CODIGO DE PEDIDO
-			if( $arrConfig['serie_formula'] <> 0 ){
-				$codigoPedido = 'N'; // serie de coorporacion JJ
-				$fUltimoCodigo = $this->model_venta_farmacia->m_cargar_ultimo_codigo_pedido_formula();
-				
-				if( empty($fUltimoCodigo) ){
-					$correlativo = $arrConfig['serie_formula'];
-
-				}else{ 
-					$correlativo = substr($fUltimoCodigo['codigo_pedido'], 1);
-					$boolCodigoPed = TRUE;
-				}
-				if( $correlativo <> 0 ){
-					$codigoPedido .= str_pad(((int)$correlativo + 1), 9, '0', STR_PAD_LEFT);
-					$allInputs['codigo_pedido'] = $codigoPedido;
-				}
-			}
-			
-			// var_dump($fUltimoCodigo); var_dump($allInputs['codigo_pedido']); exit();
-		}
-		if( $allInputs['esPreparado'] && !$allInputs['boolSolicitud'] ){// para el 2do pago de Preparados
-			$allInputs['total'] = $allInputs['total_saldo'];
-			
-		}
-		// var_dump( $allInputs['esclienteexterno'] ); exit(); 
-		// VALIDAR QUE SE DIGITE EL PROFESIONAL QUE ENVIA LA RECETA SI NO SE MARCADO LA CASILLA CLIENTE EXTERNO 
-		if( !(@$allInputs['esPreparado']) ){
-			if( !(@$allInputs['esclienteexterno']) ){ // no marcó el check 
-				if( empty($allInputs['medico']['id']) ){
-					$arrData['message'] = 'Seleccione al profesional que le generó la receta. Si es cliente externo, entonces marque la casilla de "Cliente Externo".';
-		    		$arrData['flag'] = 0;
-		    		$this->output
-				    	->set_content_type('application/json')
-				    	->set_output(json_encode($arrData));
-				    return;
-				}
-			}
-		}
-		// var_dump($allInputs['esPreparado'],$allInputs['esclienteexterno'],@$allInputs['medico']['id'],$allInputs); exit();
     	// INICIO DEL REGISTRO
 		// var_dump($allInputs); exit();
     	$this->db->trans_start();
